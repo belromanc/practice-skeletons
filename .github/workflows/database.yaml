@@ -25,15 +25,12 @@ jobs:
     - name: Ya creada muestro todas las bases de datos
       run: |
         mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "show databases;"
-    - name: Voy a usar la base de datos que he creado
+    - name: Voy a usar la base de datos que he creado y voy a crearle una tabla
       run: |
-        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "use mibase;"
-    - name: Voy a crearle una tabla
+        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "use mibase; create table mitabla(col1 varchar(25), col2 varchar(25));"
+    - name: Voy a usar la base de datos que he creado y e añado valores a la tabla
       run: |
-        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "create table mitabla(col1 varchar(25), col2 varchar(25));"
-    - name: Le añado valores a la tabla
+        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "use mibase; insert into mitabla(col1, col2) values ('pepe', 'perez');"
+    - name: Voy a usar la base de datos que he creado y y muestro los valores de mi tabla
       run: |
-        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "insert into mitabla(col1, col2) values ('pepe', 'perez');"
-    - name: Muestro los valores de mi tabla
-      run: |
-        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "select * from mitabla;"
+        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "use mibase; select * from mitabla;"
