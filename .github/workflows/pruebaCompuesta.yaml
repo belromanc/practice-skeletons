@@ -1,0 +1,19 @@
+name: AccionCpmpuesta
+run-name: Accion compuesta
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+    inputs:
+      mi-valor: #la id de este input es mi valor
+        description: Un valor que paso a este yaml.
+        required: true
+        default: "valor por defecto"
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Mostrando el valor que recibo por pantalla
+        run: echo ${{mi-valor}}
