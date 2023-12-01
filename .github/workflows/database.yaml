@@ -19,11 +19,21 @@ jobs:
       run: |
         sudo apt-get install -y mysql-client
         mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "SHOW DATABASES"
-    - name: Jugando con las bases de datos
+    - name: Creo una base de datos
       run: |
         mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "create database mibase;"
+    - name: Ya creada muestro todas las bases de datos
+      run: |
         mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "show databases;"
+    - name: Voy a usar la base de datos que he creado
+      run: |
         mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "use mibase;"
+    - name: Voy a crearle una tabla
+      run: |
         mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "create table mitabla(col1 varchar(25), col2 varchar(25));"
+    - name: Le añado valores a la tabla
+      run: |
         mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "insert into mitabla(col1, col2) values ('pepe', 'perez');"
+    - name: Muestro los valores de mi tabla
+      run: |
         mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "select * from mitabla;"
