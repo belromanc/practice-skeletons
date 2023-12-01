@@ -19,7 +19,7 @@ jobs:
           pip install pyGithub
       - name: Run script
         run: |
-          python ..\..\python\script.py
+          python script.py
         env:
           NUMERO_UNO: 1
           NUMERO_DOS: 2
