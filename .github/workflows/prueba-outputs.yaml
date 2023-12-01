@@ -1,5 +1,5 @@
-name: AccionCpmpuesta
-run-name: Accion compuesta
+name: PruebaOutputs
+run-name: Prueba Outputs
 on:
   push:
     branches: ["main"]
