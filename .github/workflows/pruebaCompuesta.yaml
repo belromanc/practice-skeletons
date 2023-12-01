@@ -16,4 +16,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Mostrando el valor que recibo por pantalla
-        run: echo ${{mi-valor}}
+        run: echo mi-valor=mi-valor.yaml
