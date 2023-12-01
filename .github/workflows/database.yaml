@@ -21,4 +21,9 @@ jobs:
         mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "SHOW DATABASES"
     - name: Jugando con las bases de datos
       run: |
-        mysql -e "create database mibase; show databases; use mibase; create table mitabla(col1 varchar(25), col2 varchar(25)); insert into mitabla(col1, col2) values ('pepe', 'perez'); select * from mitabla;" 
+        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "create database mibase;"
+        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "show databases;"
+        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "use mibase;"
+        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "create table mitabla(col1 varchar(25), col2 varchar(25));"
+        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "insert into mitabla(col1, col2) values ('pepe', 'perez');"
+        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "select * from mitabla;"
