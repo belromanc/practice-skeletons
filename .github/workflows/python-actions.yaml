@@ -1,0 +1,25 @@
+name: AccionPython
+run-name: Accion de Python
+on:
+  push:
+    branches: ["main"]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyGithub
+      - name: Run script
+        run: |
+          python ../../python/script.py
+        env:
+          NUMERO_UNO: 1
+          NUMERO_DOS: 2
