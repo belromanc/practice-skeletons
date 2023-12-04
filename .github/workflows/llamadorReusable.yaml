@@ -4,4 +4,4 @@ on:
     branches: ["main"]
 jobs:
   call-workflow:
-    uses: .github/workflows/reusable.yaml@latest
+    uses: belromanc/practice-skeletons/.github/workflows/reusable.yaml@latest
