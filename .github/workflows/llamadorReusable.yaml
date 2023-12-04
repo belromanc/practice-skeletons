@@ -5,3 +5,5 @@ on:
 jobs:
   call-workflow:
     uses: belromanc/practice-skeletons/.github/workflows/reusable.yaml@main
+    secrets:
+      token: ${{ secrets.token }}
