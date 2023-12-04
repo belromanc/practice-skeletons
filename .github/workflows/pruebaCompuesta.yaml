@@ -1,4 +1,4 @@
-name: AccionCpmpuesta
+name: AccionCompuesta
 run-name: Accion compuesta
 on:
   push:
