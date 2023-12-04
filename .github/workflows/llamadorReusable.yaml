@@ -7,4 +7,4 @@ on:
 
 jobs:
   call-workflow:
-    uses: belromanc/practice-skeletons/blob/main/.github/workflows/reusable.yaml@main
+    uses: belromanc/practice-skeletons/.github/workflows/reusable.yaml@main
